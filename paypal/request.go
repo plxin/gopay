@@ -8,6 +8,10 @@ import (
 	"github.com/go-pay/gopay"
 )
 
+func (c *Client) DoPayPalGet(ctx context.Context, uri string) (res *http.Response, bs []byte, err error) {
+	return c.doPayPalGet(ctx, uri)
+}
+
 func (c *Client) doPayPalGet(ctx context.Context, uri string) (res *http.Response, bs []byte, err error) {
 	var url = c.baseUrlProd + uri
 	if !c.IsProd {
